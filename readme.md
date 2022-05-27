@@ -3,5 +3,5 @@ This repository is prepared to speed up the development of a new android applica
 
 # TODO List
 - Change app package name
- - Rename package name
- - Update new package name in build.gradle (app) and AndroidManifest.xml
+  - Rename package name
+  - Update new package name in build.gradle (app) and AndroidManifest.xml
