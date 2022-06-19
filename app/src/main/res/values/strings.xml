@@ -1,3 +1,5 @@
 <resources>
     <string name="app_name">Android-Template-Repository</string>
+    <string name="error">Error</string>
+    <string name="ok">Ok</string>
 </resources>
