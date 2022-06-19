@@ -81,6 +81,6 @@ dependencies {
 
     // MY LIBS
     implementation "com.github.ramazanogunc:Android-Sweet-Sdk:0.9.6"
-    implementation "com.github.ramazanogunc:Sweet-Recycler-View:0.9.0"
+    implementation "com.github.ramazanogunc:Sweet-Recycler-View:0.10.0"
 
 }
