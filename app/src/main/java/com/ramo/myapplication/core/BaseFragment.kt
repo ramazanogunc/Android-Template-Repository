@@ -25,7 +25,7 @@ abstract class BaseFragment<VB : ViewBinding, VM : SweetViewModel> : ViewBinding
         }
     }
 
-    val loadingDialog by lazy { LoadingDialog(requireContext()) }
+    protected val loadingDialog by lazy { LoadingDialog(requireContext()) }
 
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         initViewModel()
@@ -50,7 +50,6 @@ abstract class BaseFragment<VB : ViewBinding, VM : SweetViewModel> : ViewBinding
         safeContext {
             Toast.makeText(it, getString(stringId), Toast.LENGTH_LONG).show()
         }
-
     }
 
     override fun onException(throwable: Throwable, cancelable: Boolean) {
