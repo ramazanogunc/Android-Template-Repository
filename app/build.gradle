@@ -68,6 +68,13 @@ dependencies {
     // NETWORK
     implementation "com.squareup.retrofit2:retrofit:$retrofit_version"
     implementation "com.squareup.retrofit2:converter-gson:$retrofit_version"
+    implementation(platform("com.squareup.okhttp3:okhttp-bom:$okhttp_version"))
+    implementation("com.squareup.okhttp3:okhttp")
+    implementation("com.squareup.okhttp3:logging-interceptor")
+
+    // NETWORK LOGGING
+    debugImplementation "com.github.chuckerteam.chucker:library:$chucker_version"
+    releaseImplementation "com.github.chuckerteam.chucker:library-no-op:$chucker_version"
 
     // JSON
     implementation "com.google.code.gson:gson:$gson_version"
