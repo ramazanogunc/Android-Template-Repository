@@ -80,7 +80,7 @@ dependencies {
     implementation "com.google.code.gson:gson:$gson_version"
 
     // MY LIBS
-    implementation "com.github.ramazanogunc:Android-Sweet-Sdk:0.9.6"
+    implementation "com.github.ramazanogunc:Android-Sweet-Sdk:0.9.7"
     implementation "com.github.ramazanogunc:Sweet-Recycler-View:0.10.0"
 
 }
