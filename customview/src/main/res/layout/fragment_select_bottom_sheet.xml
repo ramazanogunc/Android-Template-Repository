@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="utf-8"?>
+
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:layout_marginVertical="@dimen/margin_8"
+    android:background="@drawable/bg_bottom_sheet"
+    android:orientation="vertical">
+
+  <TextView
+      android:id="@+id/txtTitle"
+      android:layout_width="match_parent"
+      android:layout_height="wrap_content"
+      android:gravity="center"
+      android:paddingVertical="@dimen/padding_16"
+      android:textColor="@color/black"
+      android:textSize="18sp"
+      android:textStyle="bold"
+      tools:text="Deneme" />
+
+  <com.ramo.sweetrecycler.SweetRecyclerView
+      android:id="@+id/rvList"
+      android:layout_width="match_parent"
+      android:layout_height="wrap_content"
+      app:layoutManager="androidx.recyclerview.widget.LinearLayoutManager"
+      tools:listitem="@layout/item_text" />
+</LinearLayout>

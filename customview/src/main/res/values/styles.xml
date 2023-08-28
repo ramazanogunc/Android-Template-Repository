@@ -1,0 +1,51 @@
+<resources>
+
+  <style name="TextStyleNormal">
+    <item name="fontFamily">@font/roboto_regular</item>
+    <item name="android:textSize">16sp</item>
+    <item name="android:ellipsize">end</item>
+  </style>
+
+  <style name="TextStyleClick">
+    <item name="android:textSize">14sp</item>
+    <item name="android:ellipsize">end</item>
+    <item name="android:textColor">@drawable/text_click_selector</item>
+    <item name="fontFamily">@font/roboto_bold</item>
+  </style>
+
+  <style name="TextStyleTitle">
+    <item name="android:textSize">15sp</item>
+    <item name="android:ellipsize">end</item>
+    <item name="android:textColor">@color/primaryVariantTextColor</item>
+    <item name="android:maxLines">1</item>
+    <item name="android:textAllCaps">true</item>
+    <item name="fontFamily">@font/roboto_regular</item>
+  </style>
+
+  <style name="TextStyleTitle2">
+    <item name="android:textSize">14sp</item>
+    <item name="android:ellipsize">end</item>
+    <item name="android:textColor">@color/primaryTextColor</item>
+    <item name="android:maxLines">1</item>
+    <item name="android:textAllCaps">true</item>
+    <item name="fontFamily">@font/roboto_bold</item>
+  </style>
+
+
+  <style name="ButtonStyleMain">
+    <item name="fontFamily">@font/roboto_bold</item>
+    <item name="backgroundTint">@null</item>
+    <item name="android:background">@drawable/bg_button_selector</item>
+    <item name="cornerRadius">@dimen/button_corner</item>
+    <item name="android:textSize">@dimen/button_text_size</item>
+  </style>
+
+  <style name="AppBottomSheetDialogTheme" parent="Theme.Design.Light.BottomSheetDialog">
+    <item name="bottomSheetStyle">@style/AppModalStyle</item>
+  </style>
+
+  <style name="AppModalStyle" parent="Widget.Design.BottomSheet.Modal">
+    <item name="android:background">@drawable/bg_bottom_sheet</item>
+  </style>
+
+</resources>

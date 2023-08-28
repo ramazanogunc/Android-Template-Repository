@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+  <color name="primaryTextColor">#17171A</color>
+  <color name="primaryVariantTextColor">#909099</color>
+  <color name="secondaryTextColor">#606066</color>
+  <color name="transparent">#00FFFFFF</color>
+  <color name="backgroundColor">#F5F5FA</color>
+  <color name="white">#FFFFFF</color>
+  <color name="black">#000000</color>
+  <color name="blue">#155ED4</color>
+  <color name="bluePressed">#6097F0</color>
+  <color name="divider">#F0F0F5</color>
+  <color name="error_red">#F22424</color>
+</resources>

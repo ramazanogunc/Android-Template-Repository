@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="utf-8"?>
+<shape xmlns:android="http://schemas.android.com/apk/res/android">
+
+  <solid android:color="@color/white" />
+  <stroke
+      android:width="@dimen/text_input_layout_focused_stroke_width"
+      android:color="@color/error_red" />
+  <corners android:radius="@dimen/text_input_layout_radius" />
+
+</shape>

@@ -1,0 +1,6 @@
+<resources>
+    <string name="app_name_dev">[Dev]Android-Template-Repository</string>
+    <string name="app_name_production">Android-Template-Repository</string>
+    <string name="error">Error</string>
+    <string name="ok">Ok</string>
+</resources>
