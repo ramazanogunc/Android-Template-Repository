@@ -1,13 +1,12 @@
 package com.ramo.example.core
 
 import android.os.Bundle
+import android.view.LayoutInflater
 import android.widget.Toast
-import androidx.annotation.LayoutRes
 import androidx.appcompat.app.AlertDialog
 import androidx.appcompat.app.AppCompatActivity
-import androidx.databinding.DataBindingUtil
-import androidx.databinding.ViewDataBinding
 import androidx.lifecycle.ViewModelProvider
+import androidx.viewbinding.ViewBinding
 import com.ramo.example.R
 import com.ramo.example.core.ext.findGenericWithType
 import com.ramo.example.core.ext.observeExt
@@ -15,13 +14,13 @@ import com.ramo.example.core.state.DialogEvent
 import com.ramo.example.core.state.NavEvent
 import com.ramo.example.customview.LoadingDialog
 
-abstract class BaseActivity<DB : ViewDataBinding, VM : BaseViewModel>(
-    @LayoutRes private val layoutId: Int
+abstract class BaseActivity<VB : ViewBinding, VM : BaseViewModel>(
+    private val inflater: (LayoutInflater) -> VB
 ) : AppCompatActivity() {
 
     protected lateinit var viewModel: VM
-    protected var _binding: DB? = null
-    protected val binding: DB get() = _binding!!
+    protected var _binding: VB? = null
+    protected val binding: VB get() = _binding!!
 
     private val loadingDialog by lazy { LoadingDialog(this) }
     private val exceptionDialog by lazy {
@@ -33,8 +32,8 @@ abstract class BaseActivity<DB : ViewDataBinding, VM : BaseViewModel>(
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
-        _binding = DataBindingUtil.setContentView(this, layoutId)
-        binding.lifecycleOwner = this
+        _binding = inflater.invoke(layoutInflater)
+        setContentView(binding.root)
         initViewModel()
         initCommonObserver()
         init()
@@ -45,9 +44,8 @@ abstract class BaseActivity<DB : ViewDataBinding, VM : BaseViewModel>(
         _binding = null
     }
 
-    protected fun safeBinding(block: DB.() -> Unit) {
-        val safeBinding = binding ?: return
-        with(safeBinding, block)
+    protected fun withBinding(block: VB.() -> Unit) {
+        with(binding, block)
     }
 
     private fun initCommonObserver() {

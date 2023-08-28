@@ -48,7 +48,7 @@ android {
     }
 
     buildFeatures {
-        dataBinding = true
+        viewBinding = true
         compose = true
     }
     composeOptions {
@@ -64,7 +64,6 @@ android {
 }
 
 dependencies {
-    // TODO: buradaki dependencyler buildSrc içine taşınacak 
     // ANDROIDX
     implementation(Deps.AndroidX.core)
     implementation(Deps.AndroidX.appcompat)

@@ -5,13 +5,11 @@ import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import android.widget.Toast
-import androidx.annotation.LayoutRes
 import androidx.appcompat.app.AlertDialog
-import androidx.databinding.DataBindingUtil
-import androidx.databinding.ViewDataBinding
 import androidx.fragment.app.Fragment
 import androidx.lifecycle.ViewModelProvider
 import androidx.navigation.fragment.findNavController
+import androidx.viewbinding.ViewBinding
 import com.ramo.example.R
 import com.ramo.example.core.ext.findGenericWithType
 import com.ramo.example.core.ext.observeExt
@@ -20,13 +18,13 @@ import com.ramo.example.core.state.DialogEvent
 import com.ramo.example.core.state.NavEvent
 import com.ramo.example.customview.LoadingDialog
 
-abstract class BaseFragment<DB : ViewDataBinding, VM : BaseViewModel>(
-    @LayoutRes private val layoutId: Int
+abstract class BaseFragment<VB : ViewBinding, VM : BaseViewModel>(
+    private val bindingInflater: (LayoutInflater, ViewGroup?, Boolean) -> VB
 ) : Fragment() {
 
     protected lateinit var viewModel: VM
-    private var _binding: DB? = null
-    protected val binding: DB get() = _binding!!
+    private var _binding: VB? = null
+    protected val binding: VB get() = _binding!!
 
     protected open fun isSharedViewModel(): Boolean = false
     private val exceptionDialog by lazy {
@@ -41,8 +39,7 @@ abstract class BaseFragment<DB : ViewDataBinding, VM : BaseViewModel>(
         container: ViewGroup?,
         savedInstanceState: Bundle?
     ): View? {
-        _binding = DataBindingUtil.inflate(inflater, layoutId, container, false)
-        binding.lifecycleOwner = viewLifecycleOwner
+        _binding = bindingInflater.invoke(inflater, container, false)
         return binding.root
     }
 
@@ -111,9 +108,8 @@ abstract class BaseFragment<DB : ViewDataBinding, VM : BaseViewModel>(
         }
     }
 
-    protected fun safeBinding(block: DB.() -> Unit) {
-        val safeBinding = binding ?: return
-        with(safeBinding, block)
+    protected fun withBinding(block: VB.() -> Unit) {
+        with(binding, block)
     }
 
     protected abstract fun init()
