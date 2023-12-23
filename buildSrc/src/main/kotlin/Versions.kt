@@ -10,8 +10,8 @@ object Versions {
     const val generatedName = "${major}.${minor}.${patch}"
 
     const val minSdk = 23
-    const val compile = 33
-    const val target = 33
+    const val compile = 34
+    const val target = 34
   }
 
   object Androidx {
@@ -42,8 +42,8 @@ object Versions {
   const val gson = "2.10.1"
   const val chucker = "3.5.2"
   const val googleServices = "4.3.10"
-  const val pluginApplication = "7.4.2"
-  const val pluginLibrary = "7.4.2"
+  const val pluginApplication = "8.2.0"
+  const val pluginLibrary = "8.2.0"
   const val junit = "4.13.2"
   const val sweetRecycler = "0.10.0"
   const val mockitoVersion = "5.4.0"
