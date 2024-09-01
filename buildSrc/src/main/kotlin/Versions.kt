@@ -42,7 +42,7 @@ object Versions {
   const val gson = "2.10.1"
   const val chucker = "3.5.2"
   const val googleServices = "4.3.10"
-  const val pluginApplication = "8.2.0"
+  const val pluginApplication = "8.5.2"
   const val pluginLibrary = "8.2.0"
   const val junit = "4.13.2"
   const val sweetRecycler = "0.10.0"
