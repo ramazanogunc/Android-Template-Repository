@@ -22,8 +22,8 @@ object Versions {
     const val espresso = "3.5.1"
     const val lifecyleViewModel = "2.6.1"
     const val lifecyleExtensions = "2.2.0"
-    const val composeCompilerExtension = "1.4.8"
-    const val composeBom = "2023.03.00"
+    const val composeCompilerExtension = "1.5.15"
+    const val composeBom = "2024.09.01"
     const val composeActivity = "1.7.2"
     const val composeViewModel= "2.6.1"
 
@@ -33,8 +33,9 @@ object Versions {
     const val material = "1.9.0"
   }
 
-  const val kotlin = "1.8.22"
+  const val kotlin = "2.0.0"
   const val hilt = "2.47"
+  const val composeRoot = "2.0.0"
   const val nav = "2.6.0"
   const val glide = "4.13.0"
   const val retrofit = "2.9.0"
@@ -42,7 +43,7 @@ object Versions {
   const val gson = "2.10.1"
   const val chucker = "3.5.2"
   const val googleServices = "4.3.10"
-  const val pluginApplication = "8.5.2"
+  const val pluginApplication = "8.13.0"
   const val pluginLibrary = "8.2.0"
   const val junit = "4.13.2"
   const val sweetRecycler = "0.10.0"

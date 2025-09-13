@@ -15,4 +15,5 @@ plugins {
     id(Plugins.library) version Versions.pluginLibrary apply false
     id(Plugins.kotlin) version Versions.kotlin apply false
     id(Plugins.hiltRoot) version Versions.hilt apply false
+    id(Plugins.composeRoot) version Versions.composeRoot apply false
 }

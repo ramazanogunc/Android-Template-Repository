@@ -1,6 +1,7 @@
 plugins {
   id(Plugins.library)
   id(Plugins.kotlin)
+  id(Plugins.composeRoot)
 }
 
 android {
@@ -24,11 +25,14 @@ android {
     }
   }
   compileOptions {
-    sourceCompatibility = JavaVersion.VERSION_17
-    targetCompatibility = JavaVersion.VERSION_17
+    sourceCompatibility = JavaVersion.VERSION_21
+    targetCompatibility = JavaVersion.VERSION_21
   }
   kotlinOptions {
-    jvmTarget = "17"
+    jvmTarget = "21"
+  }
+  composeOptions {
+    kotlinCompilerExtensionVersion = Versions.Androidx.composeCompilerExtension
   }
 }
 
@@ -43,6 +47,16 @@ dependencies {
   // GOOGLE
   implementation(Deps.Google.material)
   testImplementation(Deps.junit)
+
+  // COMPOSE
+  val composeBom = platform(Deps.AndroidX.composeBom)
+  implementation(composeBom)
+  androidTestImplementation(composeBom)
+
+  implementation(Deps.AndroidX.composeMaterial3)
+  implementation(Deps.AndroidX.composeMaterial)
+  implementation(Deps.AndroidX.composeFoundation)
+  implementation(Deps.AndroidX.composeUi)
 
   implementation(Deps.sweetRecycler)
 

@@ -357,3 +357,7 @@ google-services.json
 
 # apk json
 output-metadata.json
+/.idea/AndroidProjectSystem.xml
+/.idea/codeStyles/codeStyleConfig.xml
+/.idea/codeStyles/Project.xml
+/.idea/runConfigurations.xml

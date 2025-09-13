@@ -10,4 +10,5 @@ object Plugins {
   const val hiltRoot = "com.google.dagger.hilt.android"
   const val hilt = "dagger.hilt.android.plugin"
   const val safearg = "androidx.navigation.safeargs.kotlin"
+  const val composeRoot = "org.jetbrains.kotlin.plugin.compose"
 }
